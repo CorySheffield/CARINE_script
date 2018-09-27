@@ -81,13 +81,13 @@ rem Runs diskpart and shows the user in a table the available partitions
 
 rem Switch statement for selecting the drive to save the image to
 :CASE_P
- 	net use y: \\cts-tools-syn2.cts.fsu.edu\CTS-User-Backup\Computer_WIMS\PermanentHold
+ 	net use y: \\(NETWORK LOCATION)\CTS-User-Backup\Computer_WIMS\PermanentHold
  	Dism /Capture-Image /ImageFile:y:\%machineName%.wim /CaptureDir:S:\ /Name:"%machineName%"
  	GOTO END_CASE
 
 rem Switch statement for selecting the drive to save the image to
 :CASE_T
- 	net use u: \\cts-tools-syn2.cts.fsu.edu\CTS-User-Backup\Computer_WIMS\Temp
+ 	net use u: \\(NETWORK LOCATION)\CTS-User-Backup\Computer_WIMS\Temp
  	Dism /Capture-Image /ImageFile:u:\%machineName%.wim /CaptureDir:S:\ /Name:"%machineName%"
  	GOTO END_CASE
 
